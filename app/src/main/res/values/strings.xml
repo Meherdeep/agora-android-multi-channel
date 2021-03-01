@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">Agora Demo App</string>
+    <string name="app_name">Agora - Joining Multi Channel</string>
     <string name="submit">Submit</string>
-    <string name="enter_app_id">Enter APP ID:</string>
-    <string name="enter_channel_name">Enter Channel Name:</string>
+    <string name="enter_channel_name1">Enter Channel Name 1:</string>
+    <string name="enter_channel_name2">Enter Channel Name 2:</string>
 </resources>

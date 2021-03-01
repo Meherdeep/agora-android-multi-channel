@@ -7,23 +7,14 @@
     tools:context="com.agora.agorajoinmultichannel.VideoActivity">
 
     <FrameLayout
-        android:id="@+id/remote_video_view_container1"
-        android:layout_width="161dp"
-        android:layout_height="287dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="236dp"
-        android:layout_marginTop="330dp"
-        android:background="@android:color/white" />
-
-    <FrameLayout
         android:id="@+id/remote_video_view_container3"
-        android:layout_width="161dp"
-        android:layout_height="287dp"
+        android:layout_width="379dp"
+        android:layout_height="280dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="331dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="338dp"
         android:background="@android:color/white" />
 
     <FrameLayout

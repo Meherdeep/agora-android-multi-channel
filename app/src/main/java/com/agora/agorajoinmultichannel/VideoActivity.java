@@ -210,7 +210,7 @@ public class VideoActivity extends AppCompatActivity {
 
     // Tutorial Step 7
     private void onRemoteUserLeft() {
-        FrameLayout container = (FrameLayout) findViewById(R.id.remote_video_view_container1);
+        FrameLayout container = (FrameLayout) findViewById(R.id.remote_video_view_container2);
         container.removeAllViews();
 
         // View tipMsg = findViewById(R.id.quick_tips_when_use_agora_sdk); // optional UI
