@@ -30,16 +30,6 @@ public class VideoActivity extends AppCompatActivity {
     private IRtcEngineEventHandler mRtcEventHandler = new IRtcEngineEventHandler() {
 
         @Override
-        public void onFirstRemoteVideoDecoded(final int uid, int width, int height, int elapsed) {
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    setupRemoteVideo(uid);
-                }
-            });
-        }
-
-        @Override
         public void onUserOffline(int uid, int reason) {
             runOnUiThread(new Runnable() {
                 @Override
@@ -49,6 +39,16 @@ public class VideoActivity extends AppCompatActivity {
             });
         }
 
+        @Override
+        public void onUserJoined(final int uid, int elapsed) {
+            super.onUserJoined(uid, elapsed);
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    setupRemoteVideo(uid);
+                }
+            });
+        }
     };
 
 
@@ -139,7 +139,7 @@ public class VideoActivity extends AppCompatActivity {
     // Tutorial Step 1
     private void initializeAgoraEngine() {
         try {
-            mRtcEngine = RtcEngine.create(getBaseContext(), "22824201a5dc45dbab44a08328774be3", mRtcEventHandler);
+            mRtcEngine = RtcEngine.create(getBaseContext(), "<---Add your APP ID here --->", mRtcEventHandler);
         } catch (Exception e) {
             throw new RuntimeException("NEED TO check rtc sdk init fatal error\n" + Log.getStackTraceString(e));
         }
@@ -212,9 +212,6 @@ public class VideoActivity extends AppCompatActivity {
     private void onRemoteUserLeft() {
         FrameLayout container = (FrameLayout) findViewById(R.id.remote_video_view_container2);
         container.removeAllViews();
-
-        // View tipMsg = findViewById(R.id.quick_tips_when_use_agora_sdk); // optional UI
-        // tipMsg.setVisibility(View.VISIBLE);
     }
 
 }
